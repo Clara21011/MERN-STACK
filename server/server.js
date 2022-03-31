@@ -17,7 +17,7 @@ app.use(express.json());
 //Users route
 app.use('/api/users', userRoutes);
 
-//err hanlder
+//err handler
 app.use(notFound);
 app.use(errorHandler);
 
