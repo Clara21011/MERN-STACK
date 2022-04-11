@@ -3,7 +3,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 
 const app = express();
-
+/*
 const Post = mongoose.model("post", BlogSchema);
 
 app.get("/create", function(req, res){
@@ -26,9 +26,9 @@ app.post("/create", function(req, res){
     req.body.created_at
     req.body.username
     req.body.categories  
-})
+})*/
 
-/* OTRA OPCION, EMPLEANDO AXIOS. 
+
 
 import axios from 'axios';
 
@@ -78,4 +78,3 @@ export const deletePost = async (id) => {
         console.log('Error while calling deletePost API ', error);
     } 
 }
-*/

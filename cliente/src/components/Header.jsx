@@ -25,9 +25,9 @@ const Header = () => {
         <AppBar className={classes.component}>
             <Toolbar className={classes.container}>
                 <Link className={classes.link}to='/'><Typography>HOME</Typography></Link>
-                <Typography>ABOUT</Typography> 
-                <Typography>CONTACT</Typography> 
-                <Typography>LOGIN</Typography> 
+                <Link className={classes.link}to='/'><Typography>ABOUT</Typography></Link>
+                <Link className={classes.link}to='/'><Typography>CONTACT</Typography></Link>
+                <Link className={classes.link}to='/'><Typography>LOGIN</Typography></Link>
             </Toolbar>
         </AppBar>
     )

@@ -1,7 +1,7 @@
 import { useState } from 'react'; 
 import { Box, makeStyles, FormControl, InputBase, Button, TextareaAutosize } from '@material-ui/core';
 import { AddCircle } from '@material-ui/icons';
-import { useHistory } from 'react-router-dom';
+
 
 const useStyle = makeStyles((theme) => ({
     container:{
@@ -53,7 +53,7 @@ const initialValues = {
 const CreateView = () => {
     const classes= useStyle();
     const url = 'https://images.unsplash.com/photo-1543128639-4cb7e6eeef1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wJTIwc2V0dXB8ZW58MHx8&ixlib=rb-1.2.1&w=1000&q=80';
-    const history = useHistory();
+//const history = useHistory();
     
     const [post, setPost] = useState(initialValues);
 

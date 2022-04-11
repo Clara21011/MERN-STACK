@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Blogs SignUp</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.1/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.1/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+<link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#7952b3">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="styles.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    
+<main class="form-signin">
+  <form>
+    <img class="mb-4" src="data:image/jpeg;base64,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" alt="" width="72" height="57">
+    <h1 class="h3 mb-3 fw-normal">Signup to Blog</h1>
+
+    <div class="form-floating">
+      <input type="text" class="form-control"  placeholder="First Name" required autofocus>
+      
+    </div>
+    <div class="form-floating">
+      <input type="text" class="form-control"  placeholder="Last Name" required>
+    </div>
+
+    </div>
+    <div class="form-floating">
+      <input type="email" class="form-control"  placeholder="Email" required>
+    </div>
+    
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign me up</button>
+    <p class="mt-5 mb-3 text-muted">&copy; Clara Garcia 2022</p>
+  </form>
+</main>
+
+
+    
+  </body>
+</html>
