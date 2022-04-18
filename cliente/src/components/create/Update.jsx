@@ -42,14 +42,14 @@ const initialPost = {
     title: '',
     description: '',
     picture: '',
-    username: 'codeforinterview',
+    username: 'Clara Garcia',
     categories: 'Tech',
     createdDate: new Date()
 }
 
 const Update = ({ match }) => {
     const classes = useStyle();
-    const history = useHistory();
+    const history = useNavigate();
 
     const [post, setPost] = useState(initialPost);
     const [file, setFile] = useState('');

@@ -1,14 +1,15 @@
 
 import { Button, makeStyles, Table, TableCell, TableRow, TableHead, TableBody } from '@material-ui/core';
 import { categories } from '../../constants/data';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { URL_MISMATCH_ERR } from 'domexception';
 const useStyles = makeStyles({
-    create: {
+    write: {
         margin: 20,
         background: '#6495ED',
         color: '#fff',
-        width: '90%',
-        height: 50
+        width: '85%',
+        textDecoration: 'none'
     },
     table: {
         border: '1px solid rgba(224, 224, 224, 1)'
@@ -19,22 +20,33 @@ const useStyles = makeStyles({
     }
 })
 
-const Categories = () => {
+const Categories = ({match}) => {
     const classes = useStyles();
+    const location = useLocation();
+    let params = new URLSearchParams(location.search);
     return (
         <>
-            <Link to='/create' className={classes.link}><Button variant='contained' className={classes.create}>Create Blog</Button></Link>
-            <Table className= {classes.table}>
+            <Link to={'/create/${location.search}'} style={{ textDecoration: 'none'}}>
+                <Button variant= "contained" className={classes.write}>Create Blog</Button>
+            </Link>
+
+            <Table className={classes.table}>
                 <TableHead>
-                    <TableRow>
-                        <TableCell> All categories </TableCell>
-                    </TableRow>
+                    <TableCell>
+                        <Link to={"/"} className={classes.link}>
+                            All Categories
+                        </Link>
+                    </TableCell>
                 </TableHead>
                 <TableBody>
                     {
                         categories.map(category => (
                             <TableRow>
-                                <TableCell>{category}</TableCell>
+                                <TableCell>
+                                    <Link to={`/?category=${category}`} className={classes.link}>
+                                        {category}
+                                    </Link>
+                                </TableCell>
                             </TableRow>
                         ))
                     }

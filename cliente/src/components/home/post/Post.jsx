@@ -20,7 +20,7 @@ const useStyles = makeStyles({
         objectFit: 'cover',
         borderRadius: '10px 10 px 0 0'
     },
-    text: {
+    textColor: {
         color: '#878787',
         fontSize: 12
     },
@@ -36,16 +36,21 @@ const useStyles = makeStyles({
     }
 
 })
-const Post = () => {
+const Post = ({post}) => {
     const classes = useStyles();
-    const url ='https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixid=MnwxMjA3fDB8MHxwaG90by1wYWd1fHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80';
+    const url = post.picture? post.picture: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixid=MnwxMjA3fDB8MHxwaG90by1wYWd1fHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80';
+    
+    const addEllipsis =(str, limit) => {
+        return str.length > limit ? str.substring(0, limit) + '...' : str;
+    }
+    
     return(
         <Box className={classes.container}>
-            <img src={url} alt="wrapper" className={classes.image}/>
-            <Typography className={classes.text}>Music</Typography>
-            <Typography className={classes.heading}>Coding exercise</Typography>
-            <Typography className={classes.text}>Author: Clara Garcia</Typography>
-            <Typography className={classes.detail}>Nanananana ananannana anananana</Typography>
+            <img src={url} alt="post" className={classes.image}/>
+            <Typography className={classes.textColor}>{post.categories}</Typography>
+            <Typography className={classes.heading}>{addEllipsis(post.title, 20)}</Typography>
+            <Typography className={classes.textColor}>Author: {post.username}</Typography>
+            <Typography className={classes.detail}>{assEllipsis(post.description, 100)}</Typography>
         </Box>
     )
 }

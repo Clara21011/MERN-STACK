@@ -1,9 +1,9 @@
 
 import { Grid } from '@material-ui/core';
 // components
-import Banner from './Banner';
+import Banner from '../banner/Banner';
 import Categories from './Categories';
-import Posts from './Posts';
+import Posts from './post/Posts';
 
 const Home = () => {
     return (

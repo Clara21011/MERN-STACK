@@ -25,11 +25,14 @@ const useStyles = makeStyles({
 
 const Banner = () => {
     const classes = useStyles();
+    const url = 'https://cdn.pixabay.com/photo/2017/10/10/21/47/laptop-2838921_960_720.jpg';
     return (
-        <Box className={classes.image}>
-            <Typography>BLOG</Typography>
-            <Typography>Coding Exercise</Typography>
-        </Box>
+        <>
+            <Box className={classes.image}>
+                <Typography>BLOG</Typography>
+                <Typography>Coding Exercise</Typography>
+            </Box>
+        </>
     )
 }
 

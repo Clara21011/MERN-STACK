@@ -1,39 +1,16 @@
-
-import express from 'express';
-import mongoose from 'mongoose';
-
-const app = express();
-/*
-const Post = mongoose.model("post", BlogSchema);
-
-app.get("/create", function(req, res){
-    Post.find(function(err, foundBlogs){
-        if (!err) {
-            res.send(foundBlogs);
-        } else {
-            res.send(err);
-        }
-    });
-});
-
-app.listen(3000, function(){
-    console.log("server started on port 3000");
-});
-
-app.post("/create", function(req, res){
-    req.body.title
-    req.body.picture
-    req.body.created_at
-    req.body.username
-    req.body.categories  
-})*/
-
-
-
 import axios from 'axios';
 
 
-const URL = 'http://localhost:8000'
+const URL = 'http://localhost:8000';
+
+export const uploadFile = async (post) => {
+    console.log(post);
+    try{
+        return await axios.post(`${URL}/file/upload`, post);
+    } catch (error) {
+        console.log('Error while calling createPost API ', error);
+    } 
+}
 
 export const createPost = async (post) => {
     try{
@@ -43,19 +20,19 @@ export const createPost = async (post) => {
     } 
 }
 
-export const getAllPosts = async (post) => {
+export const getAllPosts = async (param) => {
     try{
-        let response = await axios.get(`${URL}/posts`)
-        return response;
+        let response = await axios.get(`${URL}/posts${param}`);
+        return response.data;
     } catch (error) {
-        console.log('Error while calling getAllPosts API ', error);
+        console.log('Error while calling getPosts API ', error);
     } 
 }
 
-export const getPost = async (post) => {
+export const getPost = async (id) => {
     try{
-        let response = await axios.get(`${URL}/posts`)
-        return response;
+        let response = await axios.get(`${URL}/post/${id}`);
+        return response.data;
     } catch (error) {
         console.log('Error while calling getAllPosts API ', error);
     } 
@@ -63,8 +40,8 @@ export const getPost = async (post) => {
 
 export const updatePost = async (id, post) => {
     try{
-        let response = await axios.put(`${URL}/update/${id}, post`)
-        return response;
+        return await axios.put(`${URL}/update/${id}, post`);
+        
     } catch (error) {
         console.log('Error while calling updatePost API ', error);
     } 
@@ -72,9 +49,35 @@ export const updatePost = async (id, post) => {
 
 export const deletePost = async (id) => {
     try{
-        return await axios.delete(`${URL}/delete/${id}`)
+        return await axios.delete(`${URL}/delete/${id}`);
         return response;
     } catch (error) {
         console.log('Error while calling deletePost API ', error);
     } 
 }
+
+export const newComment = async (comment) => {
+    try{
+        return await axios.post(`${URL}/comment/new/`, comment);
+    } catch (error) {
+        console.log('Error while calling newComment API ', error);
+    } 
+}
+
+export const getComments = async (id) => {
+    try{
+        let response = await axios.get(`${url}/comments/${id}`);
+        return response.data;
+    } catch (error) {
+        console.log('Error while calling getComments API ', error);
+    } 
+}
+
+export const deleteComment = async (id) => {
+    try{
+        return await axios.delete(`${url}/comment/delete/${id}`);
+    } catch (error) {
+        console.log('Error while calling deleteComments API ', error);
+    } 
+}
+

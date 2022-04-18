@@ -50,7 +50,7 @@ const initialPost = {
 
 const CreatePost = () => {
     const classes = useStyle();
-    const history = useHistory();
+    const history = useNavigate();
     const location = useLocation();
 
     const [post, setPost] = useState(initialPost);
