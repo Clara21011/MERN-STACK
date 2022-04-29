@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const CommentSchema = mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
     },
     postId: {
         type: String,
@@ -19,5 +19,7 @@ const CommentSchema = mongoose.Schema({
     }
 });
 
+
 const comment = mongoose.model('comment', CommentSchema);
+
 export default comment;

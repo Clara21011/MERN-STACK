@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const PostSchema = mongoose.Schema({
     title: {
@@ -20,7 +20,7 @@ const PostSchema = mongoose.Schema({
     },
     categories: {
         type: Array,
-        required: false
+        required: false   
     },
     createdDate: {
         type: Date
