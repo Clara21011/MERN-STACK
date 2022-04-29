@@ -27,7 +27,7 @@ const About = () => {
         <Box>
             <Box className={classes.banner}></Box>
             <Box className={classes.wrapper}>
-                <Typography variant="h3">Code for Interview</Typography>
+                <Typography variant="h3">Coding Exercise</Typography>
                 <Typography variant="h5" className={classes.text}>Second try<br />
                     If you are interested, you can view some of my favorite projects here
                     <Box component="span" style={{ marginLeft: 5 }}>
